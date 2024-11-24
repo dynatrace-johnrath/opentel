@@ -1,0 +1,10 @@
+# Dynatrace environment configuration
+dynatrace_url: "https://<tenantId>.live.dynatrace.com"
+api_token: "<your-token-here"
+
+
+# Telemetry generation settings
+duration_minutes: 1
+trace_interval: 10
+metric_interval: 10
+log_interval: 10
