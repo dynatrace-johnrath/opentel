@@ -1,0 +1,51 @@
+# distributed_services.yaml
+aws_services:
+  lambda_functions:
+    - name: "prompt-preprocessor"
+      region: "us-east-1"
+      memory: 256
+      timeout: 30
+      service_type: "AWS::Lambda::Function"
+    - name: "context-fetcher"
+      region: "us-east-1"
+      memory: 512
+      timeout: 60
+      service_type: "AWS::Lambda::Function"
+    - name: "response-postprocessor"
+      region: "us-east-1"
+      memory: 256
+      timeout: 30
+      service_type: "AWS::Lambda::Function"
+
+  api_gateways:
+    - name: "ai-api-gateway"
+      stage: "prod"
+      region: "us-east-1"
+      service_type: "AWS::ApiGateway::RestApi"
+
+  sqs_queues:
+    - name: "prompt-processing-queue"
+      region: "us-east-1"
+      service_type: "AWS::SQS::Queue"
+    - name: "response-processing-queue"
+      region: "us-east-1"
+      service_type: "AWS::SQS::Queue"
+
+  sns_topics:
+    - name: "ai-events"
+      region: "us-east-1"
+      service_type: "AWS::SNS::Topic"
+
+databases:
+  - name: "context-store"
+    type: "mongodb"
+    operation_times:
+      read: [5, 20]
+      write: [10, 30]
+    error_rate: 0.01
+  - name: "user-history"
+    type: "postgresql"
+    operation_times:
+      read: [3, 15]
+      write: [8, 25]
+    error_rate: 0.005

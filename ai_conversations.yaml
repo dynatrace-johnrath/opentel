@@ -1,0 +1,30 @@
+conversations:
+  - prompt: "How do I implement a binary search tree?"
+    response: "A binary search tree is a data structure where each node has at most two children. Here's how to implement it..."
+    tokens: 156
+    response_time_ms: 234
+    model: "gpt-4"
+    user_sentiment: "positive"
+    completion_tokens: 120
+    prompt_tokens: 36
+    context_window: 4096
+    
+  - prompt: "Explain quantum computing basics"
+    response: "Quantum computing uses quantum bits or qubits which can exist in multiple states simultaneously..."
+    tokens: 189
+    response_time_ms: 312
+    model: "gpt-4"
+    user_sentiment: "neutral"
+    completion_tokens: 150
+    prompt_tokens: 39
+    context_window: 4096
+    
+  - prompt: "Write a Python function to sort a list"
+    response: "Here's a simple implementation of bubble sort in Python..."
+    tokens: 145
+    response_time_ms: 178
+    model: "gpt-3.5"
+    user_sentiment: "positive"
+    completion_tokens: 110
+    prompt_tokens: 35
+    context_window: 4096
